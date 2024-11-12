@@ -47,16 +47,19 @@ function EditPrompt() {
         }
     };
     return (
-        <Suspense>
-            <Form
-                type="Edit"
-                post={post}
-                setPost={setPost}
-                submitting={submitting}
-                handleSubmit={handleUpdatePrompt}
-            />
+        <Form
+            type="Edit"
+            post={post}
+            setPost={setPost}
+            submitting={submitting}
+            handleSubmit={handleUpdatePrompt}
+        />
+    );
+}
+export default function Page() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <EditPrompt />
         </Suspense>
     );
 }
-
-export default EditPrompt;
